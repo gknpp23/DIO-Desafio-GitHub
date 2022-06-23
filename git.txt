@@ -1,0 +1,51 @@
+git init -> inicia o git na pasta desejada ( cria o diretorio .git)
+
+git remote add origin url-pasta-github
+se exigir autentificação: usuario + senha do github
+
+git clone url-pasta-github
+
+git fetch -> Similar ao git pull porém não realiza o merge automáticamente
+git checkout origin -> move o HEAD para o começo dos repositorios remotos.
+
+## configurações
+git config --global user.name "seu nome"
+git config --global user.email "seuemail@prov.com"
+
+
+git branch -> identifica em que ramo está o projeto.
+git checout -b novabranch -> cria um novo ramo ( o no0vo ramo herda todos os commits que houve até o momento de sua criação na branch master)
+git checkout nomebranch -> alterna para branch especificada
+git merge nomebranch -> realiza uma mescla da branch master com  a branch especificada ( é necessário muito cuidado pois pode causar incosistencias nos arquivos e será necessário resolver para realizar a mescla de ramos)
+
+
+# comandos para manipular o HEAD
+git checkout master -> move o HEAD para o ultimo commit
+git checkout Hash -> Move o HEAD para o commit correspondente ao Hash, rastreando e desfazendo alterações posteriores no projeto ( volta no tempo)
+
+# comandos básicos
+git status -> verifica oq está armazenado no .git e quais alterações foram feitas
+git add -> salva as alterações no .git ( se usado em conjunto com . ou * adicona todos os arquivos)
+git commit -m "mensagem" -> registra uma mensagem descrevendo a alteração realizada ( o arguemnto -am adiciona as alterações enquanto realiza o commit)
+git push -> envia as alterações para o repositório remoto.
+git log -> exibe os commits realizados ( possui opção --oneline para simplificar exibição e opçaõ --graph para visualizar grafos, --all exibe todas as branchs)
+
+# comando de desfazer e verificar alterações
+git diff -> demonstra as alterações que foram realizadas mas ainda não foram salvas no staged
+git checkout arquivo/ git restore arquivo -> desfaz as alterações exibidas pelo git diff
+git reset HEAD <arquivo>/git restore --staged <arquivo> -> desfaz as ultimas alterações salvas com git add, ou alterações salvas no arquivo especificado.
+git reset --hard Hash -> exclui o commit especificado em hash.
+
+## GitHub
+
+# Fork e Pull request
+
+Fork -> copia um projeto para seu perfil sem influenciar no projeto original
+Pull request -> solicitação de alteração no projeto original, vc envia o seu Fork, se ele não houver conflitos com o projeto o desenvolvedor ira analisar e pode aceitar a alteração ou não.
+
+readme.md -> Documentação, cartão de visita, divulgação
+
+Issue -> Aviso/solicitação ao um desenvolvedor de um projeto
+
+GitHub Pages -> serviço do Github para hospedar sites
+
